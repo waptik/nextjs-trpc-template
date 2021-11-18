@@ -65,11 +65,15 @@ yarn test:e2e   # runs e2e tests
       <td>Prisma schema</td>
     </tr>
     <tr>
-      <td><a href="./src/api/trpc/[trpc].tsx"><code>./src/api/trpc/[trpc].tsx</code></a></td>
+      <td><a href="./api/auth/[...nextauth].tsx"><code>./api/auth/[...nextauth].tsx</code></a></td>
+      <td><a href="https://next-auth.js.org">NextAuth</a> api handler</td>
+    </tr>
+    <tr>
+      <td><a href="./api/trpc/[trpc].tsx"><code>./api/trpc/[trpc].tsx</code></a></td>
       <td>tRPC response handler</td>
     </tr>
     <tr>
-      <td><a href="./src/routers"><code>./src/routers</code></a></td>
+      <td><a href="./routers"><code>./routers</code></a></td>
       <td>Your app's different tRPC-routers</td>
     </tr>
   </tbody>
@@ -78,4 +82,4 @@ yarn test:e2e   # runs e2e tests
 
 ---
 
-Created by [@alexdotjs](https://twitter.com/alexdotjs).
+Created by [@alexdotjs](https://twitter.com/alexdotjs) and modified by [@_waptik](https://twitter.com/_waptik).
