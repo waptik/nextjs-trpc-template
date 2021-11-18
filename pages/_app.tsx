@@ -1,14 +1,24 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import { httpBatchLink } from '@trpc/client/links/httpBatchLink';
 import { loggerLink } from '@trpc/client/links/loggerLink';
 import { withTRPC } from '@trpc/next';
 import { AppType } from 'next/dist/shared/lib/utils';
-import { AppRouter } from 'server/routers/_app';
+import { SessionProvider } from 'next-auth/react';
 import superjson from 'superjson';
+import { DefaultSeo } from 'next-seo';
+
+import { AppRouter } from 'server/routers/_app';
+import { chakraTheme, seoConfig } from 'utils/config';
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
-      <Component {...pageProps} />
+      <ChakraProvider theme={chakraTheme}>
+        <SessionProvider session={pageProps.session}>
+          <DefaultSeo {...seoConfig.defaultNextSeo} />
+          <Component {...pageProps} />
+        </SessionProvider>
+      </ChakraProvider>
     </>
   );
 };
